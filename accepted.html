@@ -2,40 +2,78 @@
 <html lang="zh-CN">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>成功 ❤️</title>
+<title>❤️ 恋爱成功 ❤️</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    background:linear-gradient(
+        135deg,
+        #ff9ecf,
+        #ffe4f2
+    );
+}
+
+.bounce{
+    animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+.reward{
+
+background:white;
+
+padding:20px;
+
+margin:20px auto;
+
+max-width:500px;
+
+border-radius:20px;
+
+box-shadow:0 0 20px pink;
+
+}
+
+.big-love{
+
+font-size:80px;
+
+animation:pulse 1s infinite;
+
+}
+
+.counter{
+
+font-size:30px;
+
+color:#ff1493;
+
+font-weight:bold;
+
+}
+
+</style>
 
 </head>
 
 <body>
-
-<div class="container">
-
-<h1>🎉 恭喜你 🎉</h1>
-
-<h2>
-成功俘获我的心 ❤️
-</h2>
-
-<img src="girlfriend.jpg"
-class="love-photo">
-
-<br><br>
-
-<button onclick="loveLetter()"
-class="accept">
-
-打开情书 💌
-
-</button>
-
-</div>
 
 <audio id="music" loop>
 
@@ -44,14 +82,85 @@ type="audio/mpeg">
 
 </audio>
 
+<div class="container">
+
+<div class="big-love">
+❤️
+</div>
+
+<h1 class="bounce">
+🎉 恭喜解锁隐藏结局 🎉
+</h1>
+
+<h2>
+《成功俘获我的心》
+❤️❤️❤️
+</h2>
+
+<img
+src="girlfriend.jpg"
+class="love-photo">
+
+<div class="reward">
+
+<h2>🏆 恋爱奖励已发放</h2>
+
+<p>🌹 无限玫瑰</p>
+
+<p>🤗 无限拥抱</p>
+
+<p>🍕 零食共享权限</p>
+
+<p>🎬 无限陪看电影</p>
+
+<p>💌 专属情书 VIP</p>
+
+<p>❤️ 永久女友资格 ❤️</p>
+
+</div>
+
+<div class="counter">
+
+匹配度：1000000%
+
+</div>
+
+<br>
+
+<button
+class="accept"
+onclick="loveLetter()">
+
+💌 打开情书
+
+</button>
+
+<button
+class="accept"
+onclick="checkLove()">
+
+❤️ 爱情检测
+
+</button>
+
+<button
+class="accept"
+onclick="surprise()">
+
+🎁 神秘礼物
+
+</button>
+
+</div>
+
 <script>
 
 document.body.addEventListener(
-'click',
+"click",
 function(){
 
 document.getElementById(
-'music'
+"music"
 ).play();
 
 },
@@ -62,12 +171,103 @@ function loveLetter(){
 
 alert(
 "💌 给最特别的你\n\n"+
-"谢谢你的出现。\n\n"+
-"愿未来每一天都能和你一起创造美好的回忆 ❤️"
-"知道了吗 文意小可爱"
+"谢谢你的出现 ❤️\n\n"+
+"从今天开始\n"+
+"我想陪你一起吃饭\n"+
+"一起旅行\n"+
+"一起看电影\n\n"+
+"一起创造属于我们的回忆 🥰"
 );
 
 }
+
+function checkLove(){
+
+let score =
+Math.floor(
+Math.random()*100
+)+9900;
+
+alert(
+"❤️ 爱情检测结果 ❤️\n\n"+
+"匹配度："+score+"%\n\n"+
+"系统结论：天生一对 😘"
+);
+
+}
+
+function surprise(){
+
+const gifts = [
+
+"🌹 获得999朵玫瑰",
+
+"🍕 获得无限零食券",
+
+"🎬 获得电影约会券",
+
+"✈️ 获得浪漫旅行券",
+
+"❤️ 获得一个超喜欢你的人"
+
+];
+
+const gift =
+gifts[
+Math.floor(
+Math.random()*gifts.length
+)
+];
+
+alert(
+"🎁 神秘礼物\n\n"+
+gift
+);
+
+}
+
+setInterval(function(){
+
+let heart =
+document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.top="100vh";
+20+Math.random()*30)+"px";
+
+heart.style.pointerEvents=
+"none";
+
+document.body.appendChild(
+heart
+);
+
+let pos=100;
+
+let move=setInterval(function(){
+
+pos--;
+
+heart.style.top=
+pos+"vh";
+
+if(pos<0){
+
+heart.remove();
+
+clearInterval(move);
+
+}
+
+},20);
+
+},500);
 
 </script>
 
