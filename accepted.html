@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>成功 ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎉 恭喜你 🎉</h1>
+
+<h2>
+成功俘获我的心 ❤️
+</h2>
+
+<img src="girlfriend.jpg"
+class="love-photo">
+
+<br><br>
+
+<button onclick="loveLetter()"
+class="accept">
+
+打开情书 💌
+
+</button>
+
+</div>
+
+<audio id="music" loop>
+
+<source src="love.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<script>
+
+document.body.addEventListener(
+'click',
+function(){
+
+document.getElementById(
+'music'
+).play();
+
+},
+{once:true}
+);
+
+function loveLetter(){
+
+alert(
+"💌 给最特别的你\n\n"+
+"谢谢你的出现。\n\n"+
+"愿未来每一天都能和你一起创造美好的回忆 ❤️"
+"知道了吗 文意小可爱"
+);
+
+}
+
+</script>
+
+</body>
+</html>
